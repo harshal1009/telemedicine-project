@@ -1,0 +1,13 @@
+✅ Purpose of Each File
+File	Purpose
+app.ts	Sets up the Express app — routes, middleware, etc. No server starts here.
+server.ts	Only starts the server (app.listen) using the app from app.ts.
+
+🔧 Why Split Them?
+1. Separation of Concerns
+app.ts: Pure Express logic (routing, middleware).
+
+server.ts: Deployment-related stuff (port, env, listening).
+
+2. Testing-Friendly
+You can import app.ts directly into a test file without starting the server.
